@@ -1,0 +1,29 @@
+psql -U djamware -d express_oauth2
+
+
+List tables to confirm:
+
+
+\dt
+
+
+Look for OAuthUsers under the public schema.
+View all users:
+
+
+SELECT * FROM "OAuthUsers";
+
+
+
+
+constants.dart
+➡ Defines the base URL for your API used throughout the app.
+
+auth.dart
+➡ Manages user authentication, registration, and token refresh using OAuth2.
+
+api_interceptor.dart
+➡ Automatically adds the access token to requests and refreshes it when expired.
+
+api_service.dart
+➡ Sends HTTP requests to secured API endpoints using the configured interceptor.
